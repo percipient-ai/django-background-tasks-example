@@ -65,32 +65,13 @@ class RabbitMQClient(object):
             self.vidproc_channel = self.conn.channel()
 
     # Publish a search request to spark.
-    def submit_search_job(self,
-                          query,
-                          inclusions,
-                          exclusions,
-                          st,
-                          et,
-                          geobounds,
-                          cohort,
-                          findobj,
-                          threshold,
-                          colored_objects):
+    def submit_search_job(self, query):
         # Refresh connections if they are down.
         self.maybe_refresh_connections()
 
         # Convert the arguments to a payload.
         payload = {
-            'query': query,
-            'inclusions': inclusions,
-            'exclusions': exclusions,
-            'st': st,
-            'et': et,
-            'geobounds': geobounds,
-            'cohort': cohort,
-            'findobj': findobj,
-            'threshold': threshold,
-            'colored_objects': colored_objects,
+            'query': query,,
         }
 
         # Publish the payload to the search queue so that spark search

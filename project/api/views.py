@@ -25,7 +25,7 @@ class SearchQueue(APIView):
 
     def post(self, request):
         q = request.data['query']
-        RMQ.submit_search_job(q, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+        RMQ.submit_search_job(q)
         return Response(status=status.HTTP_201_CREATED)
 
 def _post_tasks(request):

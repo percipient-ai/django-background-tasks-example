@@ -71,7 +71,7 @@ class RabbitMQClient(object):
 
         # Convert the arguments to a payload.
         payload = {
-            'query': query,,
+            'query': query,
         }
 
         # Publish the payload to the search queue so that spark search

@@ -32,3 +32,6 @@ Process tasks
 ```
 python manage.py process_tasks
 ```
+
+The primary downside of using this background tasks with pika is that we need a separate django call to process tasks. I'm not 
+sure how easy this is to do in deployment. Then, we need to curl any listening tasks.
